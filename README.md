@@ -113,5 +113,3 @@ Clone the repo and watch for the starter kit release. Once published, follow the
 
 ---
 
-This README directly reflects the structure and details of the official challenge website. Let me know if you'd like to tailor any section further, add badges, or link to scripts!
-::contentReference[oaicite:0]{index=0}
