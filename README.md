@@ -124,4 +124,4 @@ Leaderboard scoring is handled automatically via **Codabench**.
 
 ## ✍️ Author  
 
-This repository is maintained by [**Erin Moore**] (https://github.com/rinnyssance) and collaborator [**Michael Sousa**](https://github.com/sousaplex) as part of participation in the EEG Foundation Challenge 2025.
+This repository is maintained by [**Erin Moore**](https://github.com/rinnyssance) and collaborator [**Michael Sousa**](https://github.com/sousaplex) as part of participation in the EEG Foundation Challenge 2025.
