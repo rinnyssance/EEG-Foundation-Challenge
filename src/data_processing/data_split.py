@@ -65,7 +65,6 @@ class DataSplitter:
             elif s in self.__valid_subj: valid.append(subject_split[s])
             elif s in self.__test_subj: test.append(subject_split[s])
 
-
         self.__train_set = BaseConcatDataset(train)
         self.__valid_set = BaseConcatDataset(valid)
         self.__test_set  = BaseConcatDataset(test)
