@@ -15,6 +15,9 @@ class DataSplitter:
         self.__dataset = dataset
         self.__window = window
         self.__subjects: Any
+        self.__train_subj = []
+        self.__valid_subj = []
+        self.__test_subj  = []
         self.__train_set: BaseConcatDataset;
         self.__valid_set: BaseConcatDataset;
         self.__test_set: BaseConcatDataset;
@@ -46,14 +49,21 @@ class DataSplitter:
             | set(train_subj)
         ) == set(self.__subjects)
 
+        self.__train_subj = train_subj
+        self.__valid_subj = valid_subj
+        self.__test_subj  = test_subj
+
+
     def splitToTrainTest(self):
         subject_split = self.__window.split("subject");
-        train, valid, test = []
+        train = []
+        valid = []
+        test  = []
 
         for s in subject_split:
-            if s in train: train.append(subject_split[s])
-            elif s in valid: valid.append(subject_split[s])
-            elif s in test: test.append(subject_split[s])
+            if s in self.__train_subj: train.append(subject_split[s])
+            elif s in self.__valid_subj: valid.append(subject_split[s])
+            elif s in self.__test_subj: test.append(subject_split[s])
 
 
         self.__train_set = BaseConcatDataset(train)
