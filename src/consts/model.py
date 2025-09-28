@@ -15,3 +15,15 @@ sub_rm: list[str] = [
     "NDARUJ292JXV",
     "NDARBA381JGH",
 ]
+
+lr: float = 1E-3
+
+weight_decay: float = 1E-3
+
+batch_size: int = 128
+
+num_workers: int = 0
+
+patience = 5
+
+min_delta: float = 1e-4
