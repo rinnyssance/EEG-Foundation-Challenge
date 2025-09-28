@@ -121,7 +121,7 @@ def setEpochLenAndFreq(epoch_len: float = 2.0, s_freq: int = 100):
 
 def inspectMetadata(data: DataFrame) -> None:
     from matplotlib.pylab import plt
-    fig, ax = plt.subplots(figsize=(15, 5))
+    _, ax = plt.subplots(figsize=(15, 5))
     ax = data['target'].plot.hist(bins=30, ax=ax, color='lightblue')
     ax.set_xlabel("Response Time (s)")
     ax.set_ylabel("Frequency")
