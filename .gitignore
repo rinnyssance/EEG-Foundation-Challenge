@@ -1,0 +1,4 @@
+/venv
+/eeg_venv
+data/
+__pycache__/
