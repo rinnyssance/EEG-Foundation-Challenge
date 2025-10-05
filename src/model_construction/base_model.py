@@ -23,7 +23,7 @@ class BaseModel:
         self._test_loader:  DataLoader
         self._model: Module
         self._loss_fn: Module
-        self._optimizer: Optimizer = DefaultOptimzer
+        self._optimizer: Optimizer
         self._epoch: int = 10
         self._n_batches: int = 10
         self._print_batch_stats: bool = True
