@@ -1,7 +1,25 @@
 from torch import nn
+from torch.optim import AdamW
 import data_processing.data_loader as dl
 import data_processing.data_split as ds
+from model_construction import mak_model
 import model_construction.base_model as bm
+import consts.model as cm
+from model_construction.mak_model import (
+    MakConvModel
+)
+
+test_mak_model = MakConvModel(
+    n_chans=129,
+    n_times=400,
+    mode="pred"
+)
+
+test_optimizer = AdamW(
+    test_mak_model.parameters(),
+    lr=cm.lr,
+    weight_decay=cm.weight_decay
+)
 
 def main():
     loader = dl.DataLoader()
@@ -51,15 +69,15 @@ def main():
         .setTrainSet(train_set)
         .setValidationSet(valid_set)
         .setTestSet(test_Set)
-        .setModel(bm.DefaultModel)
-        .setOptimizer(bm.DefaultOptimzer)
+        .setModel(test_mak_model)
+        .setOptimizer(test_optimizer)
         .setLossFn(nn.MSELoss())
         .shouldPrintStats(True)
         .setEpoch(20)
         .buildModel()
     )
     model.trainModel()
-    model.saveModel()
+    model.saveModel("mak_conv_model")
 
 if __name__ == "__main__":
     main();
